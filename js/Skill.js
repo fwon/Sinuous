@@ -67,7 +67,7 @@ export default class Skill extends Enemy {
 
         if (!self.isEated) {
             map.ctx.fillStyle="#fff";
-            map.ctx.fillText(TEXTS[self.type], self.x - 5, self.y + 2);
+            map.ctx.fillText(TEXTS[self.type], self.x - 6, self.y + 4);
         }
     }
 }

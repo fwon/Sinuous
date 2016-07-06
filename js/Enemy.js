@@ -13,7 +13,7 @@ export default class Enemy extends Point {
         this.color = "red";
         this.vx = 0;
         this.vy = 0;
-        this.speed = options.speed || Math.random() * 1 + 0.5;
+        this.speed = options.speed || Math.random() * 2 + 0.5;
         this.type = options.type || 'normal';
         this.ratio = window.innerHeight / window.innerWidth;
     }
