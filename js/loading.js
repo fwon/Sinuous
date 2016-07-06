@@ -14,9 +14,11 @@ const BARHEIGHT = 5;
 let counter = 0;
 let particles = [];
 let particle_no = 25;
-let prevBarWidth = 0;
 let barStartX = (w - TOTALWIDTH)/2;
 let barStartY = (h - BARHEIGHT)/2;
+
+const startPage = document.getElementById("start-page");
+const loadingPage = document.getElementById("loading-page");
 
 class progressbar {
     constructor() {
@@ -87,6 +89,7 @@ function update(){
     }
 }
 
+export let loadingFinish = false;
 export function draw(ratio) {
     reset();
     counter++;
@@ -94,27 +97,28 @@ export function draw(ratio) {
     bar.hue += 0.8;
     
     let currentBarWidth = bar.total * ratio
-    bar.width += 1;
-    if (currentBarWidth !== prevBarWidth) {
-        bar.width = currentBarWidth;
+    if (bar.width < currentBarWidth) {
+        bar.width += 2;
+        console.log('a');
     }
-    prevBarWidth = currentBarWidth;
-    if(bar.width >= bar.total){
-        if(counter > 215){
+    if(bar.width >= bar.total) {
+        if(counter > 215) {
             reset();
             bar.hue = 0;
             bar.width = 0;
             counter = 0;
             particles = [];
-        }
-        else{
+        } else {
             bar.hue = 126;
             bar.width = bar.total + 1;
             bar.draw();
         }
+        startPage.style.display = "block";
+        loadingPage.style.display = "none";
+        loadingFinish = true;
     } else {
         bar.draw();
-        for(let i = 0; i < particle_no; i += 10){
+        for(let i = 0; i < particle_no; i += 10) {
             particles.push(new particle());
         }
     }

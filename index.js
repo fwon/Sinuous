@@ -8,7 +8,7 @@ import Enemy from './js/Enemy';
 import Skill from './js/Skill';
 import Player from './js/Player';
 import Loader from './js/loader';
-import {draw as drawLoading} from './js/loading';
+import {draw as drawLoading, loadingFinish} from './js/loading';
 
 const enemyCount = 30;
 let player;
@@ -18,8 +18,6 @@ let holdingTime = 0;
 let holdingLevel = 0;
 let timer;
 
-const startPage = document.getElementById("start-page");
-const loadingPage = document.getElementById("loading-page");
 const startBtn = document.getElementById("start-button");
 const helpBtn = document.getElementById("help-button");
 const gameTitle = document.getElementById("game-title");
@@ -261,7 +259,7 @@ function start() {
 let barRatio = 0;
 (function loading() {
     drawLoading(barRatio);
-    if (barRatio !== 1) {
+    if (!loadingFinish) {
         raf(loading);    
     }
 })();
@@ -273,8 +271,6 @@ loader.load([
     {src: 'assets/images/over.png'},
     {src: 'assets/images/sprites.png'}
 ], function() {
-    startPage.style.display = "block";
-    loadingPage.style.display = "none";
     start();
 });
 
@@ -282,7 +278,7 @@ loader.load([
 let loaded = 0;
 loader.on('load', e => {
     ++loaded;
-    barRatio = loaded / 4;
+    barRatio = loaded / 3;
 })
 
 
