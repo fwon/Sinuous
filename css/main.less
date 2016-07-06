@@ -1,0 +1,203 @@
+.introduction {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: #fff;
+    padding: 10px;
+    h1 {
+        text-align: center;
+        font-size: 80px;
+        margin-top: 20%;
+        color: transparent;
+        -webkit-text-stroke: 2px #fff;
+        letter-spacing: 0.04em;
+        -webkit-transform: scale(0.1);
+        transform: scale(0.1);
+        opacity: 0;
+        -webkit-transition: all 1s ease-in;
+        transition: all 1s ease-in;
+        &.active {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    .desc {
+        padding: 20px;
+    }
+    .intro {
+        padding: 20px 0 5px 20px;
+        font-size: 25px;
+    }
+    .legend {
+        background-color: #000;
+        border-radius: 20px;
+        margin-top: 0;
+        border: 2px solid rgb(30, 136, 168);
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        z-index: 100;
+        opacity: 0;
+        -webkit-transition: all .5s ease-in;
+        transition: all .5s ease-in;
+        li {
+            color: #fff;
+            padding: 10px 20px;
+            width: 50%;
+            float: left;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+        i {
+            background: url('/assets/images/sprites.png') top left;
+            color: #fff;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            vertical-align: middle;
+            margin-right: 20px;
+            font-style: normal;
+            font-size: 10px;
+            text-align: center;
+            -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+            &.s {
+                background-position: 0px -23px;
+            }
+            &.G {
+                background-position: 0px -46px;
+            }
+            &.T {
+                background-position: 0px -69px;
+            }
+            &.M {
+                background-position: 0px -92px;
+            }
+            &.O {
+                background-position: 0px 0px;
+            }
+            &.P {
+                background-position: 0px -138px;
+            }
+            &.E {
+                background-position: 0px -115px;
+            }
+        }
+    }
+    .btn {
+        position: absolute;
+        left: 50%;
+        bottom: 20%;
+        -webkit-transform: translate(-50%, 200%);
+        transform: translate(-50%, 200%);
+        text-align: center;
+        margin-top: 100px;
+        cursor: pointer;
+        -webkit-transition: all 1s ease-in;
+        transition: all 1s ease-in;
+        &.active {
+            -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+        }
+        span {
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            margin-top: 20px;
+            background-color: rgba(30,136,168, 0.2);
+            border-radius: 25px; 
+            border: 2px solid rgb(30,136,168);
+            color: rgb(30,136,168);
+            &:hover {
+                background-color: rgba(30,136,168, 1);
+                color: #fff;
+            }
+        }
+    }
+}
+
+.game-panel {
+    color: #fff;
+    font-size: 12px;
+    padding: 10px;
+    .level {
+        margin-right: 10px;
+    }    
+}
+
+.game-over {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: #fff;
+    padding: 50px;
+    .score {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: #000;
+        font-size: 30px;
+        padding: 20px 0;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 20px;
+        text-align: center;
+        padding-top: 10px;
+        box-sizing: border-box;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        .over-bg {
+            width: 300px;
+            height: 60px;
+            background: url('/assets/images/over.png');
+            background-size: 512px 256px;
+            background-position: 25px 100px;
+        }
+        .count {
+            margin: 15px 0;
+            span {
+                display: inline-block;
+                width: 60px;
+                height: 80px;
+                background: url('/assets/images/number.png');
+                background-size: 675px 80px;
+            }
+            .num-0 { background-position: 0 0; }
+            .num-1 { background-position: -61px 0;}
+            .num-2 { background-position: -121px 0;}
+            .num-3 { background-position: -191px 0;}
+            .num-4 { background-position: -261px 0;}
+            .num-5 { background-position: -331px 0;}
+            .num-6 { background-position: -401px 0;}
+            .num-7 { background-position: -471px 0;}
+            .num-8 { background-position: -541px 0;}
+            .num-9 { background-position: -611px 0;}
+        }
+        .btn {
+            display: inline-block;
+            width: 103px;
+            height: 60px;
+            background: url('/assets/images/over.png');
+            background-size: 387px 200px;
+            background-position: 160px 0;
+        }
+    }
+}
+
+.loading-page {
+    color: #fff;
+    #loading {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+}
