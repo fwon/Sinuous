@@ -62,8 +62,10 @@ export default class Player extends Point {
                 self.touchStartY = e.touches[0].pageY;
             });
         } else {
+            let left = (document.getElementById("game").clientWidth - 
+                    document.getElementById("world").clientWidth)/2;
             window.addEventListener('mousemove', (e = window.event) => {
-                self.moveTo(e.clientX - 10, e.clientY - 30);
+                self.moveTo(e.clientX - left - 10, e.clientY - 30);
             });
         }
     }

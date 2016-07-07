@@ -42,12 +42,12 @@ const raf = window.requestAnimationFrame
 
 //地图初始化
 const canvas = document.getElementById('world');
-canvas.width = window.innerWidth;
+canvas.width = window.innerWidth > 1000 ? 1000 : window.innerWidth;
 canvas.height = window.innerHeight;
 
 map.init({
     canvas,
-    width: window.innerWidth,
+    width: window.innerWidth > 1000 ? 1000 : window.innerWidth,
     height: window.innerHeight
 });
 
