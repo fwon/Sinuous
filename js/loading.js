@@ -99,7 +99,6 @@ export function draw(ratio) {
     let currentBarWidth = bar.total * ratio
     if (bar.width < currentBarWidth) {
         bar.width += 2;
-        console.log('a');
     }
     if(bar.width >= bar.total) {
         if(counter > 215) {

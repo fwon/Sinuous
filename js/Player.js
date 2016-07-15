@@ -272,7 +272,8 @@ export default class Player extends Point {
             if (i === 0) {
                 map.ctx.moveTo(prevPot.x, prevPot.y);
             } else {
-                map.ctx.quadraticCurveTo(prevPot.x, prevPot.y, prevPot.x + (nextPot.x - prevPot.x) / 2, prevPot.y + (nextPot.y - prevPot.y) / 2);
+                // map.ctx.quadraticCurveTo(prevPot.x, prevPot.y, prevPot.x + (nextPot.x - prevPot.x) / 2, prevPot.y + (nextPot.y - prevPot.y) / 2);
+                map.ctx.lineTo(nextPot.x, nextPot.y);
             }
 
             //保持尾巴最小长度，并有波浪效果
