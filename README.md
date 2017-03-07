@@ -2,7 +2,7 @@
 
 手机版
 
-![roadmap.path](http://fwon.cn/escape/assets/images/escape.png)
+![roadmap.path](http://fwon.github.io/escape/assets/images/escape.png)
 
 ###本地运行：
 `npm install`
